@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doggy project — Kem không cần tủ lạnh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #eaf6f4;
+    --bg-2: #dff0ee;
+    --ink: #1c3b3a;
+    --ink-soft: #3f5f5c;
+    --raspberry: #e8536f;
+    --raspberry-dark: #c53a56;
+    --mint: #7fd8be;
+    --cream: #fffaf3;
+    --card-border: #cdeee5;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, var(--bg-2), transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Nunito Sans', sans-serif;
+    line-height:1.6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f2422; --bg-2:#123330; --ink:#eaf6f4; --ink-soft:#bcded9;
+      --cream:#16302d; --card-border:#1f4a44;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f2422; --bg-2:#123330; --ink:#eaf6f4; --ink-soft:#bcded9;
+    --cream:#16302d; --card-border:#1f4a44;
+  }
+
+  .wrap{max-width:760px; margin:0 auto; padding:56px 24px 80px;}
+
+  .eyebrow{
+    display:inline-block;
+    font-weight:700;
+    color:var(--raspberry-dark);
+    background:var(--cream);
+    border:1px solid var(--card-border);
+    border-radius:999px;
+    padding:6px 16px;
+    font-size:0.9rem;
+  }
+
+  h1{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size:clamp(2rem, 5vw, 2.9rem);
+    line-height:1.15;
+    margin:18px 0 6px;
+    color:var(--ink);
+  }
+
+  .subtitle{
+    color:var(--ink-soft);
+    font-size:1.1rem;
+    max-width:60ch;
+    margin:0 0 8px;
+  }
+
+  .divider{
+    height:3px;
+    width:64px;
+    background:var(--mint);
+    border:none;
+    border-radius:2px;
+    margin:28px 0 32px;
+  }
+
+  .intro{
+    background:var(--cream);
+    border:1px solid var(--card-border);
+    border-radius:18px;
+    padding:20px 24px;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+
+  h2{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:1.5rem;
+    margin:44px 0 16px;
+    color:var(--raspberry-dark);
+  }
+
+  .card{
+    background:var(--cream);
+    border:1px solid var(--card-border);
+    border-radius:18px;
+    padding:8px 24px 8px;
+  }
+
+  ul.ingredients{
+    list-style:none;
+    margin:0;
+    padding:12px 0;
+  }
+  ul.ingredients li{
+    position:relative;
+    padding:10px 0 10px 30px;
+    border-bottom:1px dashed var(--card-border);
+  }
+  ul.ingredients li:last-child{border-bottom:none;}
+  ul.ingredients li::before{
+    content:"";
+    position:absolute;
+    left:0; top:16px;
+    width:14px; height:14px;
+    border-radius:4px;
+    background:var(--mint);
+  }
+
+  ol.steps{
+    list-style:none;
+    counter-reset:step;
+    margin:0;
+    padding:12px 0;
+  }
+  ol.steps li{
+    counter-increment:step;
+    position:relative;
+    padding:12px 0 12px 46px;
+    border-bottom:1px dashed var(--card-border);
+  }
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0; top:8px;
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--raspberry);
+    color:#fff;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .note{
+    margin-top:32px;
+    background:linear-gradient(135deg, var(--mint), #a9e8d4);
+    color:#0f2b26;
+    border-radius:18px;
+    padding:18px 22px;
+    font-weight:600;
+  }
+
+  .hero-photo{
+    margin-top:44px;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid var(--card-border);
+  }
+  .hero-photo img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+
+  footer{
+    margin-top:56px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Doggy tutorial series</span>
+  <h1>How to make ice cream without fridge in 5 minutes</h1>
+  <p class="subtitle">Chào các con vk đã đến với Doggy tutorial series. Chúng ta cùng làm thứ dung dịch trắng chảy nước ngọt ngào tan trong miệng nhé.</p>
+
+  <hr class="divider">
+
+  <h2>Ingredients</h2>
+  <div class="card">
+    <ul class="ingredients">
+      <li>200ml sữa tươi (lạnh)</li>
+      <li>1 hộp whipping cream</li>
+      <li>Nhiều đường</li>
+      <li>Nhiều muối</li>
+      <li>Nhiều đá viên</li>
+      <li>2 túi zip to & bé</li>
+    </ul>
+  </div>
+
+  <h2>Instructions</h2>
+  <div class="card">
+    <ol class="steps">
+      <li>Đổ sữa vào bát to</li>
+      <li>Cho 3 thìa đường</li>
+      <li>Đổ whipping cream</li>
+      <li>Đổ tinh chất vanilla (nếu có)</li>
+      <li>Rót hết đống bầy nhầy vào túi zip bé (ép hết khí ra ngoài rồi mới đóng lại)</li>
+      <li>Cho nhiều đá viên vào túi zip to</li>
+      <li>Đổ muối vào rồi trộn đều cùng đá viên</li>
+      <li>Đặt túi zip nhỏ vào</li>
+      <li>Lấp lại bằng đá viên + trộn muối</li>
+      <li>Ép hết khí ra rồi đóng túi zip to</li>
+      <li>Quấn túi zip to bằng khăn tắm</li>
+      <li>Lắc khoảng 5 phút (nếu tăng thêm thể tích dung dịch kem trộn thì tăng thời gian lắc lên)</li>
+    </ol>
+  </div>
+
+  <div class="note">Tip: lắc càng đều tay, kem càng mịn — đừng ngại lắc mạnh!</div>
+
+  <div class="hero-photo">
+    <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2019/08/Ice-Cream-main-1200.jpg?quality=82&strip=1&w=1400" alt="Thành phẩm kem tự làm">
+  </div>
+
+  <footer>Doggy project 🐾</footer>
+</div>
+</body>
+</html>
